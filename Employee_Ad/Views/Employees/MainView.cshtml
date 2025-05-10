@@ -1,0 +1,72 @@
+﻿<head>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.5/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css">
+    <link rel="stylesheet" href="//jonthornton.github.io/jquery-timepicker/jquery.timepicker.css">
+
+</head>
+
+<h1>Add Employee</h1>
+
+<p style="text-align:right;margin-right:20px;">
+    <a class="btn btn-outline-primary" asp-action="Index">Index</a>
+</p>
+<form method="post" id="FrmEmployee">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Name" name="Name" id="TxtName" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Email" aria-label="Email" name="Email" id="TxtEmail" aria-describedby="basic-addon2">
+    </div>
+
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="PhoneNo" aria-label="PhoneNo" name="PhoneNo" id="TxtPhoneNo" aria-describedby="basic-addon2">
+    </div>
+
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Salary" aria-label="Salary" name="Salary" id="TxtSalary" aria-describedby="basic-addon2">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Manager Name</label>
+        <select class="form-select" aria-label="Default select" id="ddlManager">
+            <!-- Options will be appended here -->
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Joining Date</label>
+        <input type="text" class="form-control" id="JoiningDate" name="ApoitmentDate">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Working Time</label>
+        <input type="text" class="form-control" id="WorkingTime" name="ApoitmentTime">
+    </div>
+    <div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="Gender" id="malegender" value="Male">
+            <label class="form-check-label" for="malegender">
+                Male
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="Gender" id="femalegender" value="Female">
+            <label class="form-check-label" for="femalegender">
+                Female
+            </label>
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary" onclick="AddEmployee()">Add</button>
+</form>
+
+@section scripts {
+    <!-- SweetAlert2 for alerts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- DataTables script -->
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+    <script src="//jonthornton.github.io/jquery-timepicker/jquery.timepicker.js"></script>
+
+    <!-- Your custom JS -->
+    <script type="text/javascript" src="~/Jqery/Employee.js"></script>
+}
